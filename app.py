@@ -9,7 +9,7 @@
 #  - Copyright (C) - All Rights Reserved 2017 - 2027
 #  - Unauthorized copying of this file, via any medium is strictly prohibited
 #
-#  - Written by Mike Hidalgo - MHidalgo@curvature.com  January 2018
+#  - Written by Mike Hidalgo - mike.hidalgo@outlook.com  April 2018
 #
 #  - Initial draft - prof of concept ( poc ) - serial number checker
 # _____________________________________________________________________________

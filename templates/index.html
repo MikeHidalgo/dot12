@@ -1,0 +1,107 @@
+<!--
+
+#  - This unpublished material is proprietary to the author(s).
+#  - The methods and techniques described herein are
+#  - considered trade secrets and/or confidential. Reproduction or
+#  - distribution, in whole or in part, in any medium, is forbidden
+#  - except by express written permission of the author(s).
+#
+#  - Copyright (C) - All Rights Reserved 2017 - 2027
+#  - Unauthorized copying of this file, via any medium is strictly prohibited
+#
+#  - Written by Mike Hidalgo - MHidalgo@curvature.com  January 2018
+#
+#  - Initial draft - prof of concept ( poc ) - serial number checker
+
+#
+#  - BETA_TESTING_PAGE_#_2018.02.09.D
+# ______________________________________________________
+-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  </style>
+</head>
+   <body>
+      <nav class="navbar" >
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+               <a class="navbar-brand" href="#"><img class="img-responsive" src="static/img/clogo.png" alt="CURVATURE Serial Number Checker"></a>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> about </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+      </div>
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 table-responsive">
+         <h1>
+            CTE Database Search
+         </h1>
+         <p>
+            Search for servers that have been or are booted into CTE by serial number.
+         </p>
+         <form action = "/serial_search" method = "POST">
+            <p>Enter Serial number <input type = "text" name = "serial_number" /></p>
+            <p><input type = "submit" value = "submit" /></p>
+         </form>
+         <br>
+         <h3>
+            Database results for serial number search.
+         </h3>
+         <br>
+         <table class="table table-condensed table-hover">
+
+               <tr>
+                  <th> Manufacturer </th>
+                  <td> {{ result["oem"] }} </td>
+               </tr>
+               <tr>
+                  <th> Device Name </th>
+                  <td> {{ result["product_name"] }} </td>
+               </tr>
+               <tr>
+                  <th> Serial number </th>
+                  <td> {{ result["serial_number"] }} </td>
+               </tr>
+               <tr>
+                  <th> CTE IP address </th>
+                  <td><a href='{{ "http://" }}{{ result["system_ip_address"] }}' target="_blank">{{ result["system_ip_address"] }}</a></td>
+               </tr>
+               <tr>
+                  <th> Console IP address </th>
+                  <td><a href='{{ "https://" }}{{ result["system_ip_address"] }}{{":4200"}}' target="_blank">{{ result["system_ip_address"] }}</a></td>
+               </tr>
+               <tr>
+                  <th> IPMI IP address </th>
+                  <td><a href='{{ "http://" }}{{ result["ipmi_ip_address"] }}' target="_blank">{{ result["ipmi_ip_address"] }}</a></td>
+               </tr>
+         </table>
+      </div>
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+      </div>
+      <div class="col-sm-12">
+
+      </div>
+   </body>
+</html>
+
+
+
+

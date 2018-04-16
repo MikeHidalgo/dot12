@@ -1,0 +1,21 @@
+
+def db_print(record):
+    print(" ------------------------------------------------------\n")
+    print(' date_stamp             : ' + record["date_stamp"])
+    print(' time_stamp             : ' + record["time_stamp"])
+    print("\n")
+    print(' oem                    : ' + record["oem"])
+    print(' product_name           : ' + record["product_name"])
+    print(' serial_number          : ' + record["serial_number"])
+    print(' system ip              : ' + record["system_ip_address"])
+    print(' ipmi ip                : ' + record["ipmi_ip_address"])
+    print(' cpu_version            : ' + record["cpu_version"])
+    print(' cpu_socket_count       : ' + record["cpu_socket_count"])
+    print(' cpu_populated_count    : ' + record["cpu_populated_count"])
+    print(' cpu_core_count         : ' + record["cpu_core_count"])
+    print(' cpu_thread_count       : ' + record["cpu_thread_count"])
+    print(' memory_dimm_count      : ' + record["memory_dimm_count"])
+    print(' memory_dimm_size       : ' + record["memory_dimm_size"])
+    print(' memory_total_size      : ' + record["memory_total_size"])
+    print(" ------------------------------------------------------\n")
+
